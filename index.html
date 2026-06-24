@@ -3,107 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eagle Trident Ventures | Strategic Investments</title>
+    <title>Eagle Trident Ventures</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style> body { font-family: 'Inter', system-ui, sans-serif; } </style>
+    <style>
+        .hero { animation: fadeScale 1.8s ease-out forwards; }
+        @keyframes fadeScale {
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
+        }
+    </style>
 </head>
 <body class="bg-zinc-950 text-white">
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-md z-50 border-b border-zinc-800">
         <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
             <a href="index.html">
-    <img src="Eagle Trident Ventures Logo.png" alt="Eagle Trident Ventures" class="h-12">
-</a>
-           <div class="space-x-8 text-sm font-medium">
-    <a href="index.html" class="hover:text-amber-400 transition">Home</a>
-    <a href="#focus" class="hover:text-amber-400 transition">Focus Areas</a>
-    <a href="partners.html" class="hover:text-amber-400 transition">Partners</a>
-    <a href="#contact" class="hover:text-amber-400 transition">Contact</a>
-</div>
+                <img src="Eagle Trident Ventures Logo.png" alt="Eagle Trident Ventures" class="h-14">
+            </a>
+            <div class="space-x-8 text-sm font-medium">
+                <a href="index.html" class="hover:text-amber-400">Home</a>
+                <a href="#focus" class="hover:text-amber-400">Focus Areas</a>
+                <a href="partners.html" class="hover:text-amber-400">Partners</a>
+                <a href="#contact" class="hover:text-amber-400">Contact</a>
+            </div>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="min-h-screen flex items-center pt-20 bg-cover bg-center" style="background-image: url('https://picsum.photos/id/1015/2000/1200');">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Disciplined Capital.<br>Enduring Impact.</h1>
-            <p class="text-xl md:text-2xl text-zinc-300 mb-10">Eagle Trident Ventures partners with exceptional teams to build resilient businesses in Minerals, Defense Tech, and Energy & Infrastructure.</p>
-            <a href="#contact" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-amber-400 transition">Explore Opportunities</a>
+    <section class="hero min-h-screen flex items-center pt-20 bg-cover bg-center relative" style="background-image: url('https://picsum.photos/id/1015/2000/1200');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-black/70"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Disciplined Capital.<br>High Growth Focus.<br>Enduring Impact.</h1>
+            <p class="text-xl md:text-2xl text-zinc-200 mb-10">Strategic investments in minerals, defense technology, and energy infrastructure.</p>
+            <a href="#focus" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-amber-400 transition text-lg">Explore Our Focus Areas</a>
         </div>
     </section>
 
     <!-- Focus Areas -->
     <section id="focus" class="py-24 bg-zinc-900">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">Core Focus Areas</h2>
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="bg-zinc-800 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-semibold mb-4">Minerals & Critical Materials</h3>
-                    <p class="text-zinc-400">Strategic investments in lithium, rare earths, uranium, and supply chain security for national resilience.</p>
+            <h2 class="text-4xl font-bold mb-16 text-center">Strategic Focus Areas</h2>
+            
+            <div class="space-y-20">
+                <!-- Minerals -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Minerals & Critical Materials</h3>
+                    <p class="text-zinc-300 leading-relaxed">Eagle Trident Ventures secures access to critical minerals as a cornerstone of national security, technological leadership, and economic resilience in the 21st century. We invest in mining, processing, recycling, and supply chain ventures focused on lithium, rare earths, uranium, and other strategic materials. Geopolitical risks and surging demand from EVs, renewables, and defense applications have exposed dangerous vulnerabilities in global supply chains.</p>
+                    <p class="text-zinc-300 leading-relaxed mt-6">Significant opportunities exist in both developed and emerging jurisdictions as nations seek to diversify away from concentrated supply chain sources. Our investments strengthen supply security while targeting attractive risk-adjusted returns.</p>
                 </div>
-                <div class="bg-zinc-800 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-semibold mb-4">Defense Tech</h3>
-                    <p class="text-zinc-400">Dual-use technologies, logistics, and innovation supporting global security and NATO-aligned capabilities.</p>
-                </div>
-                <div class="bg-zinc-800 p-8 rounded-2xl">
-                    <h3 class="text-2xl font-semibold mb-4">Energy & Infrastructure</h3>
-                    <p class="text-zinc-400">Traditional and transition energy projects, carbon capture, and critical infrastructure development.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Partners -->
-    <section id="partners" class="py-24 bg-black">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-12 text-center">Our Partners</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Add bios here - I kept them short -->
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">Bob Smith</h3>
-                    <p class="text-amber-400 text-sm mb-4">Principal, Adobe Capital Partners</p>
-                    <p class="text-zinc-400 text-sm">Experienced attorney, investor, and family office leader with deep expertise in energy, investments, minerals trading, and strategic deal-making.</p>
+                <!-- Defense Tech -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Defense Tech & Dual-Use Innovation</h3>
+                    <p class="text-zinc-300 leading-relaxed">Maintaining technological superiority is essential for deterrence and economic competitiveness. We back companies developing dual-use technologies in autonomy, logistics, sensing, secure communications and related fields. The convergence of commercial innovation and defense needs creates powerful platforms that can rapidly scale while addressing urgent capability gaps for the U.S. and its allies.</p>
+                    <p class="text-zinc-300 leading-relaxed mt-6">The global defense tech market is innovating and expanding rapidly, offering substantial commercial and strategic returns. We look for portfolio companies that will contribute directly to national security while building valuable intellectual property and recurring revenue streams for large-scale general industry adoption.</p>
                 </div>
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">Preston Smith</h3>
-                    <p class="text-amber-400 text-sm mb-4">CIO, Adobe Capital Partners</p>
-                    <p class="text-zinc-400 text-sm">Leads investment strategy and operations with a focus on portfolio optimization and emerging opportunities.</p>
-                </div>
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">John Loudon</h3>
-                    <p class="text-amber-400 text-sm mb-4">Partner</p>
-                    <p class="text-zinc-400 text-sm">Strategic advisor with expertise in international business development and sector-specific investments.</p>
-                </div>
-                <!-- Continue for others with available info -->
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">Bruce Roberts</h3>
-                    <p class="text-amber-400 text-sm mb-4">CEO, Trident Solutions</p>
-                    <p class="text-zinc-400 text-sm">Leads defense innovation, logistics, and dual-use technology initiatives with a global security focus.</p>
-                </div>
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">Nick Fowler</h3>
-                    <p class="text-amber-400 text-sm mb-4">President, Trident Solutions</p>
-                    <p class="text-zinc-400 text-sm">Oversees global operations and strategic growth in defense, dual-use technologies, and critical infrastructure.</p>
-                </div>
-                <div class="bg-zinc-900 p-8 rounded-2xl">
-                    <h3 class="font-semibold text-xl">Anthony Misuraca</h3>
-                    <p class="text-amber-400 text-sm mb-4">Partner</p>
-                    <p class="text-zinc-400 text-sm">Contributes operational expertise and strategic advisory in defense and international partnerships.</p>
+
+                <!-- Energy -->
+                <div>
+                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Energy & Critical Infrastructure</h3>
+                    <p class="text-zinc-300 leading-relaxed">Reliable, resilient energy and infrastructure systems underpin modern economies and national security. Our team has decades of experience leading in the energy and infrastructure space — leading multi-billion dollar investments and development projects. We invest across the spectrum — traditional energy assets, transmission, grid modernization, renewables integration, and hybrid solutions. Energy infrastructure must be pragmatic and reliable; over-reliance on intermittent sources without proper baseload and storage creates systemic risks.</p>
+                    <p class="text-zinc-300 leading-relaxed mt-6">This sector offers durable cash flows, inflation protection, and meaningful contribution to energy security. We target projects that deliver both attractive financial returns and long-term societal resilience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-24 bg-zinc-900">
+    <section id="contact" class="py-24 bg-black">
         <div class="max-w-2xl mx-auto px-6 text-center">
             <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-            <form action="https://formspree.io/f/yourform" method="POST" class="space-y-6">
-                <input type="text" name="name" placeholder="Name" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl">
-                <input type="email" name="email" placeholder="Email" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl">
-                <textarea name="message" placeholder="Message" rows="5" class="w-full px-6 py-4 bg-zinc-800 border border-zinc-700 rounded-xl"></textarea>
-                <button type="submit" class="w-full bg-amber-400 text-black py-4 rounded-xl font-semibold">Send Message</button>
+            <form action="https://formspree.io/f/yourformid" method="POST" class="space-y-6">
+                <input type="text" name="name" placeholder="Name" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400">
+                <input type="email" name="email" placeholder="Email" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400">
+                <textarea name="message" placeholder="Message" rows="5" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400"></textarea>
+                <button type="submit" class="w-full bg-amber-400 text-black py-4 rounded-xl font-semibold hover:bg-white transition">Send Message</button>
             </form>
         </div>
     </section>
