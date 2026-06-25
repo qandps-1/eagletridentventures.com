@@ -6,8 +6,14 @@
     <title>Partners | Eagle Trident Ventures</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        .bio-expanded { display: none; }
+        .bio-expanded.open { display: block; }
+        .read-more-btn { cursor: pointer; }
+    </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-amber-900">
         <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
@@ -16,21 +22,33 @@
                     <img src="logo-v2.png" alt="Eagle Trident Ventures" class="h-16">
                     <div class="flex flex-col leading-tight">
                         <span class="text-white font-light tracking-widest text-xs uppercase">Eagle Trident</span>
-                        <span class="text-amber-400 font-light tracking-widest text-xs uppercase">Ventures</span>
+                        <span style="color: #C9A84C;" class="font-light tracking-widest text-xs uppercase">Ventures</span>
                     </div>
                 </div>
             </a>
-            <div class="space-x-8 text-sm font-medium">
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">Home</a>
                 <a href="index.html#focus" class="hover:text-amber-400">Focus Areas</a>
                 <a href="partners.html" class="text-amber-400">Partners</a>
                 <a href="index.html#contact" class="hover:text-amber-400">Contact</a>
             </div>
+            <!-- Hamburger -->
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-amber-900 px-6 py-4 space-y-4 text-sm font-medium">
+            <a href="index.html" class="block hover:text-amber-400">Home</a>
+            <a href="index.html#focus" class="block hover:text-amber-400">Focus Areas</a>
+            <a href="partners.html" class="block text-amber-400">Partners</a>
+            <a href="index.html#contact" class="block hover:text-amber-400">Contact</a>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <div class="pt-32 pb-12 text-center">
+    <div class="pt-32 pb-12 text-center px-6">
         <h1 class="text-5xl font-bold mb-4">Our Partners</h1>
         <p class="text-zinc-400 max-w-2xl mx-auto">Leadership driving strategic investments in minerals, defense tech, and energy & infrastructure.</p>
     </div>
@@ -40,62 +58,104 @@
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
             <!-- Bob Smith -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=Bob+Smith" alt="Bob Smith" class="w-full h-64 object-cover">
-                <div class="p-8">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="bob.jpg" alt="Bob Smith" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=Bob+Smith'">
+                <div class="p-8 flex flex-col flex-1">
                     <h3 class="text-2xl font-semibold">Bob Smith</h3>
-                    <p class="text-amber-400 text-sm mt-1">Principal & CEO, Adobe Capital Partners and Infrastructure X</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">30-year energy/infrastructure executive, experienced venture investing company president, active investor, entrepreneur and family office leader with deep expertise in minerals, energy, defense tech, investments, deal structuring, and international opportunities.</p>
+                    <p class="text-amber-400 text-sm mt-1">Founding Partner | Principal & CEO, Adobe Capital Partners and Infrastructure X</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        A 30-year energy, infrastructure, and capital markets executive, Bob brings deep expertise in private equity, venture capital, deal structuring, and complex transactions. He previously served as EVP, General Counsel, and Chief Development Officer of Pinnacle West Capital (NYSE: PNW), and led Columbia Pipeline Group through a $13 billion sale following its double IPO spin-off from NiSource.
+                    </p>
+                    <div class="bio-expanded mt-3 text-zinc-300 text-sm leading-relaxed" id="bio-bob">
+                        <p class="mt-2">As President of El Dorado Investment Corporation, PNW's venture capital vehicle, Bob oversaw more than $100 million in investment assets across energy technology, defense tech, advanced computing, AI, fintech, and critical minerals. He currently advises several technology funds including Energy Impact Partners, The Westly Group, AZ VC Fund, and Asterozoa Capital Partners.</p>
+                        <p class="mt-2">Bob's network spans C-suite officers at the largest energy companies in the US and Canada and senior bankers at leading global investment banks. He holds a law degree from The Ohio State University and a bachelor's degree from the University of South Alabama.</p>
+                        <p class="mt-2">Beyond business, Bob chairs the board of Global Action, an international compassion and leader training organization, and is founder of the GoSat Initiative, a multi-ministry effort to embed core Christian principles in geopolitically changing nations.</p>
+                    </div>
+                    <button onclick="toggleBio('bio-bob', this)" class="read-more-btn mt-4 text-amber-400 text-sm font-medium hover:text-white transition text-left">Read More ↓</button>
                 </div>
             </div>
 
             <!-- Bruce Roberts -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=Bruce+Roberts" alt="Bruce Roberts" class="w-full h-64 object-cover">
-                <div class="p-8">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="bruce.jpg" alt="Bruce Roberts" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=Bruce+Roberts'">
+                <div class="p-8 flex flex-col flex-1">
                     <h3 class="text-2xl font-semibold">Bruce Roberts</h3>
-                    <p class="text-amber-400 text-sm mt-1">CEO, Trident Solutions</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">Leads defense innovation, logistics, dual-use technologies, and global security initiatives with a NATO-aligned focus.</p>
+                    <p class="text-amber-400 text-sm mt-1">Partner | CEO & Founder, Trident Solutions</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        A retired U.S. Army Lieutenant Colonel with nearly three decades of operational experience spanning logistics, intelligence, infantry, and public relations, Bruce brings rare cross-domain expertise to defense and infrastructure engagements. His final assignments included service as a Special Operations Battalion Commander and Division Assistant Operations Officer.
+                    </p>
+                    <div class="bio-expanded mt-3 text-zinc-300 text-sm leading-relaxed" id="bio-bruce">
+                        <p class="mt-2">After retiring in 2021, Bruce founded August Mission, a nonprofit that supported U.S. citizens and Afghan allies during the U.S. withdrawal from Afghanistan. As CEO of Trident Solutions, he provides strategic leadership and cross-domain coordination, guiding complex engagements with clarity and operational precision across defense, dual-use technology, and critical infrastructure sectors.</p>
+                    </div>
+                    <button onclick="toggleBio('bio-bruce', this)" class="read-more-btn mt-4 text-amber-400 text-sm font-medium hover:text-white transition text-left">Read More ↓</button>
                 </div>
             </div>
 
             <!-- Nick Fowler -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=Nick+Fowler" alt="Nick Fowler" class="w-full h-64 object-cover">
-                <div class="p-8">
-                    <h3 class="text-2xl font-semibold">Nick Fowler</h3>
-                    <p class="text-amber-400 text-sm mt-1">President, Trident Solutions</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">Oversees global operations and drives strategic growth across defense, dual-use technologies, critical infrastructure, and international partnerships.</p>
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="nick.jpg" alt="Nicholas Fowler" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=Nicholas+Fowler'">
+                <div class="p-8 flex flex-col flex-1">
+                    <h3 class="text-2xl font-semibold">Nicholas Fowler</h3>
+                    <p class="text-amber-400 text-sm mt-1">Partner | President & Founder, Trident Solutions</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        An operational leader with more than 20 years of experience across defense, aviation, and humanitarian operations in high-risk and politically sensitive environments, Nicholas has built and led partnerships across government, NGOs, and private ventures in austere conditions worldwide.
+                    </p>
+                    <div class="bio-expanded mt-3 text-zinc-300 text-sm leading-relaxed" id="bio-nick">
+                        <p class="mt-2">As President of Trident Solutions, Nicholas leads international strategy, coordinates high-value introductions, and manages senior-level engagements with defense and government stakeholders across Europe and beyond. His operational depth and global network make him a trusted bridge between strategic vision and on-the-ground execution.</p>
+                    </div>
+                    <button onclick="toggleBio('bio-nick', this)" class="read-more-btn mt-4 text-amber-400 text-sm font-medium hover:text-white transition text-left">Read More ↓</button>
                 </div>
             </div>
 
             <!-- John Loudon -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=John+Loudon" alt="John Loudon" class="w-full h-64 object-cover">
-                <div class="p-8">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="john.jpg" alt="John Loudon" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=John+Loudon'">
+                <div class="p-8 flex flex-col flex-1">
                     <h3 class="text-2xl font-semibold">John Loudon</h3>
                     <p class="text-amber-400 text-sm mt-1">Partner</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">Strategic advisor with experience in international business development, defense, and cross-sector investments.</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        A seasoned strategic advisor with deep experience in international business development, defense, and cross-sector investments. John brings a global network and a proven track record of building high-value partnerships across complex, multi-jurisdictional environments.
+                    </p>
                 </div>
             </div>
 
             <!-- Antonio Misuraca -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=Antonio+Misuraca" alt="Antonio Misuraca" class="w-full h-64 object-cover">
-                <div class="p-8">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="antonio.jpg" alt="Antonio Misuraca" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=Antonio+Misuraca'">
+                <div class="p-8 flex flex-col flex-1">
                     <h3 class="text-2xl font-semibold">Antonio Misuraca</h3>
                     <p class="text-amber-400 text-sm mt-1">Partner</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">Contributes operational expertise and strategic advisory in defense, humanitarian, and international business contexts.</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        A globally connected humanitarian leader and civilian private contractor, Antonio brings over two decades of experience mobilizing high-net-worth networks, corporate sponsors, and special operations professionals in support of veterans, disaster relief, and community initiatives worldwide.
+                    </p>
+                    <div class="bio-expanded mt-3 text-zinc-300 text-sm leading-relaxed" id="bio-antonio">
+                        <p class="mt-2">Antonio has spearheaded major fundraising campaigns for organizations including Make-A-Wish Foundation, Global Empowerment Mission, Hire Our Heroes, and August Mission — consistently leveraging relationships with world leaders, corporate titans, professional athletes, and celebrities to drive impact. Sponsors of his events have included McLaren, Pepsi, Under Armour, Anheuser-Busch, Hublot, and Carnival Cruises.</p>
+                        <p class="mt-2">In his role as a civilian contractor alongside retired U.S. Special Operations operators, Antonio has provided solutions in global conflict zones for over a decade. He holds an FAA student pilot's license and has completed training in Tactical Combat Casualty Care (TCCC), Tactical Driving, Survival, Land Navigation, and Emergency Vehicle Operation. He currently serves in an advisory capacity to the Community Police Relations Foundation, working to strengthen trust between law enforcement and inner-city communities.</p>
+                    </div>
+                    <button onclick="toggleBio('bio-antonio', this)" class="read-more-btn mt-4 text-amber-400 text-sm font-medium hover:text-white transition text-left">Read More ↓</button>
                 </div>
             </div>
 
             <!-- Preston Smith -->
-            <div class="bg-zinc-900 rounded-3xl overflow-hidden">
-                <img src="https://via.placeholder.com/600x400/1f2937/ffffff?text=Preston+Smith" alt="Preston Smith" class="w-full h-64 object-cover">
-                <div class="p-8">
+            <div class="bg-zinc-900 rounded-3xl overflow-hidden flex flex-col">
+                <img src="preston.jpg" alt="Preston Smith" class="w-full h-64 object-cover object-top"
+                    onerror="this.src='https://via.placeholder.com/600x400/1f2937/ffffff?text=Preston+Smith'">
+                <div class="p-8 flex flex-col flex-1">
                     <h3 class="text-2xl font-semibold">Preston Smith</h3>
-                    <p class="text-amber-400 text-sm mt-1">CIO, Adobe Capital Partners and Infrastructure X</p>
-                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">Leads investment strategy, portfolio management, and operations with a focus on minerals, defense tech, and energy & infrastructure sectors.</p>
+                    <p class="text-amber-400 text-sm mt-1">Partner | CIO, Adobe Capital Partners & Principal, Transform Capital Partners</p>
+                    <p class="mt-4 text-zinc-300 text-sm leading-relaxed">
+                        Preston oversees a diversified investment portfolio spanning technology, AI, defense, data centers, healthcare technology, real estate, quantum computing, and advanced energy. With a decade of experience in stock and options trading and a robust real estate portfolio across Arizona, Texas, and North Carolina, he brings a disciplined approach to capital allocation and long-term value creation.
+                    </p>
+                    <div class="bio-expanded mt-3 text-zinc-300 text-sm leading-relaxed" id="bio-preston">
+                        <p class="mt-2">As a Principal of Transform Capital Partners, a joint family office, Preston drives transformative investment opportunities across high-growth sectors, leveraging deep expertise in portfolio construction and emerging technology markets. He holds a bachelor's degree from Arizona State University.</p>
+                        <p class="mt-2">Beyond investing, Preston serves as Director of Operations for the Sustainable Missions Project, empowering community leaders in developing nations through bi-vocational training and mission-driven initiatives. He also serves as director of the G6 World Changers Group, a network of high-net-worth Christian business leaders driving global impact through philanthropy and mission-focused endeavors.</p>
+                    </div>
+                    <button onclick="toggleBio('bio-preston', this)" class="read-more-btn mt-4 text-amber-400 text-sm font-medium hover:text-white transition text-left">Read More ↓</button>
                 </div>
             </div>
 
@@ -105,5 +165,24 @@
     <footer class="py-12 text-center text-sm text-zinc-500 border-t border-zinc-800">
         © 2026 Eagle Trident Ventures. All rights reserved.
     </footer>
+
+    <script>
+        // Hamburger menu
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        // Bio expand/collapse
+        function toggleBio(id, btn) {
+            const bio = document.getElementById(id);
+            bio.classList.toggle('open');
+            btn.textContent = bio.classList.contains('open') ? 'Read Less ↑' : 'Read More ↓';
+        }
+    </script>
 </body>
 </html>
