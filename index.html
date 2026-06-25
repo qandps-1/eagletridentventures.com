@@ -12,12 +12,26 @@
             from { opacity: 0; transform: scale(0.95); }
             to { opacity: 1; transform: scale(1); }
         }
+        .focus-banner {
+            height: 320px;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        .focus-banner::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(24,24,27,0.95));
+        }
     </style>
 </head>
 <body class="bg-zinc-950 text-white">
+
     <!-- Navbar -->
     <nav class="fixed top-0 w-full bg-black/95 backdrop-blur-md z-50 border-b border-amber-900">
         <div class="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+            <!-- Logo + Name -->
             <a href="index.html">
                 <div class="flex items-center gap-3">
                     <img src="logo-v2.png" alt="Eagle Trident Ventures" class="h-16">
@@ -27,61 +41,90 @@
                     </div>
                 </div>
             </a>
-            <div class="space-x-8 text-sm font-medium">
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex space-x-8 text-sm font-medium">
                 <a href="index.html" class="hover:text-amber-400">Home</a>
                 <a href="#focus" class="hover:text-amber-400">Focus Areas</a>
                 <a href="partners.html" class="hover:text-amber-400">Partners</a>
                 <a href="#contact" class="hover:text-amber-400">Contact</a>
             </div>
+
+            <!-- Hamburger Button (mobile only) -->
+            <button id="menuBtn" class="md:hidden text-white focus:outline-none" aria-label="Toggle menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-black/95 border-t border-amber-900 px-6 py-4 space-y-4 text-sm font-medium">
+            <a href="index.html" class="block hover:text-amber-400">Home</a>
+            <a href="#focus" class="block hover:text-amber-400" onclick="closeMobileMenu()">Focus Areas</a>
+            <a href="partners.html" class="block hover:text-amber-400">Partners</a>
+            <a href="#contact" class="block hover:text-amber-400" onclick="closeMobileMenu()">Contact</a>
         </div>
     </nav>
 
     <!-- Hero -->
-    <section class="hero min-h-screen flex items-center pt-20 bg-cover bg-center relative" style="background-image: url('https://picsum.photos/id/1015/2000/1200');">
-        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/70"></div>
+    <section class="hero min-h-screen flex items-center pt-20 bg-cover bg-center relative" style="background-image: url('energy.jpg');">
+        <div class="absolute inset-0 bg-gradient-to-b from-black/40 to-black/75"></div>
         <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h1 class="text-6xl md:text-7xl font-bold tracking-tighter mb-6">Disciplined Capital.<br>High Growth Focus.<br>Enduring Impact.</h1>
-            <p class="text-xl md:text-2xl text-zinc-200 mb-10">Strategic investments in minerals, defense technology, and energy infrastructure.</p>
+            <h1 class="text-5xl md:text-7xl font-bold tracking-tighter mb-6">Disciplined Capital.<br>High Growth Focus.<br>Enduring Impact.</h1>
+            <p class="text-lg md:text-2xl text-zinc-200 mb-10">Strategic investments in minerals, defense technology, and energy infrastructure.</p>
             <a href="#focus" class="inline-block bg-white text-black px-10 py-4 rounded-full font-semibold hover:bg-amber-400 transition text-lg">Explore Our Focus Areas</a>
         </div>
     </section>
 
     <!-- Focus Areas -->
-    <section id="focus" class="py-24 bg-zinc-900">
-        <div class="max-w-6xl mx-auto px-6">
+    <section id="focus" class="bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6 pt-24 pb-6">
             <h2 class="text-4xl font-bold mb-16 text-center text-amber-300">Strategic Focus Areas</h2>
-            <div class="space-y-20">
-                <!-- Minerals -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Minerals & Critical Materials</h3>
-                    <p class="text-zinc-300 leading-relaxed">Eagle Trident Ventures secures access to critical minerals as a cornerstone of national security, technological leadership, and economic resilience in the 21st century. We invest in mining, processing, recycling, and supply chain ventures focused on lithium, rare earths, uranium, and other strategic materials. Geopolitical risks and surging demand from EVs, renewables, and defense applications have exposed dangerous vulnerabilities in global supply chains.</p>
-                    <p class="text-zinc-300 leading-relaxed mt-6">Significant opportunities exist in both developed and emerging jurisdictions as nations seek to diversify away from concentrated supply chain sources. Our investments strengthen supply security while targeting attractive risk-adjusted returns.</p>
-                </div>
-                <!-- Defense -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Defense Tech & Dual-Use Innovation</h3>
-                    <p class="text-zinc-300 leading-relaxed">Maintaining technological superiority is essential for deterrence and economic competitiveness. We back companies developing dual-use technologies in autonomy, logistics, sensing, secure communications and related fields. The convergence of commercial innovation and defense needs creates powerful platforms that can rapidly scale while addressing urgent capability gaps for the U.S. and its allies.</p>
-                    <p class="text-zinc-300 leading-relaxed mt-6">The global defense tech market is innovating and expanding rapidly, offering substantial commercial and strategic returns. We look for portfolio companies that will contribute directly to national security while building valuable intellectual property and recurring revenue streams for large-scale general industry adoption.</p>
-                </div>
-                <!-- Energy -->
-                <div>
-                    <h3 class="text-3xl font-semibold mb-6 text-amber-400">Energy & Critical Infrastructure</h3>
-                    <p class="text-zinc-300 leading-relaxed">Reliable, resilient energy and infrastructure systems underpin modern economies and national security. Our team has decades of experience leading in the energy and infrastructure space — leading multi-billion dollar investments and development projects. We invest across the spectrum — traditional energy assets, transmission, grid modernization, renewables integration, and hybrid solutions. Energy infrastructure must be pragmatic and reliable; over-reliance on intermittent sources without proper baseload and storage creates systemic risks.</p>
-                    <p class="text-zinc-300 leading-relaxed mt-6">This sector offers durable cash flows, inflation protection, and meaningful contribution to energy security. We target projects that deliver both attractive financial returns and long-term societal resilience.</p>
-                </div>
-            </div>
+        </div>
+
+        <!-- Minerals -->
+        <div class="focus-banner" style="background-image: url('mine.jpg');"></div>
+        <div class="max-w-6xl mx-auto px-6 py-14">
+            <h3 class="text-3xl font-semibold mb-6 text-amber-400">Minerals & Critical Materials</h3>
+            <p class="text-zinc-300 leading-relaxed">Eagle Trident Ventures secures access to critical minerals as a cornerstone of national security, technological leadership, and economic resilience in the 21st century. We invest in mining, processing, recycling, and supply chain ventures focused on lithium, rare earths, uranium, and other strategic materials. Geopolitical risks and surging demand from EVs, renewables, and defense applications have exposed dangerous vulnerabilities in global supply chains.</p>
+            <p class="text-zinc-300 leading-relaxed mt-6">Significant opportunities exist in both developed and emerging jurisdictions as nations seek to diversify away from concentrated supply chain sources. Our investments strengthen supply security while targeting attractive risk-adjusted returns.</p>
+        </div>
+
+        <!-- Defense -->
+        <div class="focus-banner" style="background-image: url('drone.jpg');"></div>
+        <div class="max-w-6xl mx-auto px-6 py-14">
+            <h3 class="text-3xl font-semibold mb-6 text-amber-400">Defense Tech & Dual-Use Innovation</h3>
+            <p class="text-zinc-300 leading-relaxed">Maintaining technological superiority is essential for deterrence and economic competitiveness. We back companies developing dual-use technologies in autonomy, logistics, sensing, secure communications and related fields. The convergence of commercial innovation and defense needs creates powerful platforms that can rapidly scale while addressing urgent capability gaps for the U.S. and its allies.</p>
+            <p class="text-zinc-300 leading-relaxed mt-6">The global defense tech market is innovating and expanding rapidly, offering substantial commercial and strategic returns. We look for portfolio companies that will contribute directly to national security while building valuable intellectual property and recurring revenue streams for large-scale general industry adoption.</p>
+        </div>
+
+        <!-- Energy -->
+        <div class="focus-banner" style="background-image: url('energy.jpg');"></div>
+        <div class="max-w-6xl mx-auto px-6 py-14 pb-24">
+            <h3 class="text-3xl font-semibold mb-6 text-amber-400">Energy & Critical Infrastructure</h3>
+            <p class="text-zinc-300 leading-relaxed">Reliable, resilient energy and infrastructure systems underpin modern economies and national security. Our team has decades of experience leading in the energy and infrastructure space — leading multi-billion dollar investments and development projects. We invest across the spectrum — traditional energy assets, transmission, grid modernization, renewables integration, and hybrid solutions. Energy infrastructure must be pragmatic and reliable; over-reliance on intermittent sources without proper baseload and storage creates systemic risks.</p>
+            <p class="text-zinc-300 leading-relaxed mt-6">This sector offers durable cash flows, inflation protection, and meaningful contribution to energy security. We target projects that deliver both attractive financial returns and long-term societal resilience.</p>
         </div>
     </section>
 
     <!-- Contact -->
     <section id="contact" class="py-24 bg-black">
         <div class="max-w-2xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6">Get in Touch</h2>
-            <form action="https://formspree.io/f/yourformid" method="POST" class="space-y-6">
-                <input type="text" name="name" placeholder="Name" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400">
-                <input type="email" name="email" placeholder="Email" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400">
-                <textarea name="message" placeholder="Message" rows="5" class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400"></textarea>
-                <button type="submit" class="w-full bg-amber-400 text-black py-4 rounded-xl font-semibold hover:bg-white transition">Send Message</button>
+            <h2 class="text-4xl font-bold mb-4">Get in Touch</h2>
+            <p class="text-zinc-400 mb-10">Interested in partnering or learning more? We'd love to hear from you.</p>
+            <!-- FORMSPREE: replace 'yourformid' with your real ID from formspree.io -->
+            <form id="contactForm" action="https://formspree.io/f/yourformid" method="POST" class="space-y-6" onsubmit="handleSubmit(event)">
+                <input type="text" name="name" placeholder="Name" required
+                    class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400 text-left">
+                <input type="email" name="email" placeholder="Email" required
+                    class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400">
+                <textarea name="message" placeholder="Message" rows="5" required
+                    class="w-full px-6 py-4 bg-zinc-900 border border-zinc-700 rounded-xl focus:outline-none focus:border-amber-400"></textarea>
+                <button type="submit" id="submitBtn"
+                    class="w-full bg-amber-400 text-black py-4 rounded-xl font-semibold hover:bg-white transition">
+                    Send Message
+                </button>
+                <p id="formMsg" class="hidden text-green-400 text-sm pt-2">Message sent! We will be in touch soon.</p>
+                <p id="formErr" class="hidden text-red-400 text-sm pt-2">Something went wrong. Please try again or email us directly.</p>
             </form>
         </div>
     </section>
@@ -89,5 +132,56 @@
     <footer class="py-12 text-center text-sm text-zinc-500 border-t border-zinc-800">
         © 2026 Eagle Trident Ventures. All rights reserved.
     </footer>
+
+    <script>
+        // Hamburger menu toggle
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+
+        function closeMobileMenu() {
+            mobileMenu.classList.add('hidden');
+            const icon = menuBtn.querySelector('i');
+            icon.classList.add('fa-bars');
+            icon.classList.remove('fa-times');
+        }
+
+        // Contact form handler
+        async function handleSubmit(e) {
+            e.preventDefault();
+            const btn = document.getElementById('submitBtn');
+            const msg = document.getElementById('formMsg');
+            const err = document.getElementById('formErr');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            try {
+                const res = await fetch(e.target.action, {
+                    method: 'POST',
+                    body: new FormData(e.target),
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (res.ok) {
+                    msg.classList.remove('hidden');
+                    err.classList.add('hidden');
+                    e.target.reset();
+                } else {
+                    throw new Error('Failed');
+                }
+            } catch {
+                err.classList.remove('hidden');
+                msg.classList.add('hidden');
+            } finally {
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+            }
+        }
+    </script>
 </body>
 </html>
